@@ -58,24 +58,80 @@
             color: #92a4ff;
         }
 
-        table {
-            border-collapse: collapse;
-            border: 2px solid rgb(200, 200, 200);
-            letter-spacing: 1px;
-            font-size: 1.5rem;
-            background-color: #FFF;
+        .table {
+                width: 100%;
+                border: 2px solid rgb(200, 200, 200);
+                border-collapse: collapse;
+                letter-spacing: 1px;
+                font-size: 1.5rem;
+                background-color: #FFF;             
         }
 
-        td {
-            border: 1px solid rgb(190, 190, 190);
-            padding: 10px 20px;
+        .table caption {
+                font-size: 28px;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin: 8px 0px;
         }
 
-        th {
-            border: 1px solid rgb(190, 190, 190);
-            padding: 10px 20px;
-            background-color: rgb(162, 162, 162);
+        .table tr {
+                background-color: #f8f8f8;
+                border: 1px solid #ddd;
         }
+
+        .table th, .table td {
+                border: 1px solid rgb(190, 190, 190);
+                padding: 10px 20px;
+                
+        }
+
+        .table thead th{ 
+                text-transform: uppercase;
+                background-color: #ddd;
+        }
+
+        .table tbody tr:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .table tbody td:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        @media screen and (max-width: 600px) {
+    .table {
+        border: 0px;
+    }
+    .table caption {
+        font-size: 22px;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+    .table th, .table td {
+        font-size: 12px;
+        padding: 10px 4px;
+    }
+    .table td {
+        display: inline-flexbox;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+    .table  td:last-child {
+        border-bottom: 0px;
+    }
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+}
 
         .footer {
             background-color: #333;
@@ -103,7 +159,9 @@
     <hr>
 
     <div class="container">
-        <table>
+        <table class="table">
+            <caption>Gustos</caption>
+
             <colgroup>
                 <col style="background-color: rgb(207, 207, 207);">
                 <col>
